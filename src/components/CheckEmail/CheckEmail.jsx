@@ -1,12 +1,12 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
 import axios from "../../api/axios";
-import Authorization from "../Authorization";
 import Icons from "../Icons";
-import Login from "../Login";
+
 const LOGIN_URL = "api/v1/auth/check-email";
 const CheckEmail = () => {
   const [user, setUser] = useState("");
