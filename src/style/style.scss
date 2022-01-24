@@ -1,0 +1,201 @@
+$clr--border: #ededed;
+$clr--input: #e8ecf5;
+$clr--txt-primary: #2e353b;
+$clr--txt-secondary: #6a67ae;
+$clr--form--background: #ffff;
+$clr--background: #f0f2f8;
+$clr--gray: #999;
+$cle--purp: #8253b9;
+$clr--hover: #a465ec;
+$radius--btn: 45px;
+$radius--form: 20px;
+$radius--input: 10px;
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background: $clr--background;
+}
+.Login__App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  flex-direction: column;
+}
+.form {
+  width: 400px;
+  border-radius: $radius--form;
+  background-color: $clr--form--background;
+  color: $clr--txt-primary;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 10px rgb(96, 98, 219, 0.5);
+  padding: 10px 20px 20px 20px;
+  z-index: 1;
+
+  &__header {
+    border-bottom: 1px solid $clr--border;
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    &__btn {
+      background-color: transparent;
+      border: none;
+      padding-bottom: 0;
+      vertical-align: middle;
+      cursor: pointer;
+      &--back {
+        &:hover {
+          transform: translateX(-3px);
+          transition: all 0.5s;
+        }
+      }
+
+      &--close {
+        &:hover {
+          transform: scale(1.1);
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &__btn--login {
+      background: rgb(96, 98, 219);
+      background: linear-gradient(
+        90deg,
+        rgba(96, 98, 219, 1) 35%,
+        rgba(139, 82, 215, 1) 100%
+      );
+      color: $clr--form--background;
+      border: none;
+      border-radius: $radius--btn;
+      padding: 10px 40px;
+      font-size: 16px;
+      margin: 20px 0;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease 0s;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        background: rgb(96, 98, 219);
+        background: radial-gradient(
+          circle,
+          rgba(96, 98, 219, 1) 35%,
+          rgba(139, 82, 215, 1) 100%
+        );
+        box-shadow: 0px 15px 20px rgba(96, 98, 219, 0.4);
+        transform: scale(1.01);
+        transition: all 0.5s ease 0s;
+      }
+    }
+  }
+  &__pwd-f {
+    text-align: center;
+    color: $clr--txt-secondary;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+      color: #8253b9;
+    }
+  }
+}
+
+input {
+  padding: 10px;
+  border-radius: $radius--input;
+  border: 1px solid $clr--border;
+  background: $clr--input;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(77, 139, 255, 0.5);
+    border: 1px solid $clr--input;
+  }
+}
+
+label {
+  font-size: 16px;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 5px;
+}
+
+.form__social {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  &--line {
+    border-top: 1px solid $clr--border;
+    padding: 10px 20px;
+    color: $clr--gray;
+    text-align: center;
+  }
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+
+  &__container {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    border: 1px solid $clr--border;
+    border-radius: 100%;
+    vertical-align: middle;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.5s;
+    }
+  }
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 20px;
+  font-size: 18px;
+  a {
+    text-decoration: none;
+    color: $cle--purp;
+    &:hover {
+      color: $clr--hover;
+
+      transition: all 0.5s;
+    }
+    &.active {
+      color: $clr--hover;
+      text-shadow: rgb(96, 98, 219, 0.5) 1px 0 10px;
+    }
+  }
+}
+
+.errmsg {
+  color: red;
+  font-size: 24px;
+  text-align: center;
+}
+.offscreen {
+  display: none;
+}
+.sccess--header {
+  color: #6a67ae;
+}
+@media screen and (max-width: 720px) {
+  .form {
+    width: 80%;
+  }
+}
