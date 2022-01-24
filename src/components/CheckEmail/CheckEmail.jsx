@@ -1,16 +1,11 @@
 /* eslint-disable no-console */
-import { useState, useRef, useEffect } from "react";
-
-import { Link, NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import axios from "../../api/axios";
 import Icons from "../Icons";
 import Login from "../Login";
 const LOGIN_URL = "api/v1/auth/check-email";
 const CheckEmail = () => {
-  const userRef = useRef();
-  const errorRef = useRef();
-
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, seterrMsg] = useState("");
